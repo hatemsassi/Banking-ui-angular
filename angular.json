@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "banking-ui": {
+    "banking-ui-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -31,9 +31,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "banking-ui:build:production"
+              "browserTarget": "banking-ui-angular:build:production"
             },
             "development": {
-              "browserTarget": "banking-ui:build:development"
+              "browserTarget": "banking-ui-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "banking-ui:build"
+            "browserTarget": "banking-ui-angular:build"
           }
         },
         "test": {
@@ -107,5 +113,5 @@
       }
     }
   },
-  "defaultProject": "banking-ui"
+  "defaultProject": "banking-ui-angular"
 }
